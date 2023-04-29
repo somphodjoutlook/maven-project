@@ -4,11 +4,11 @@ pipeline{
     stages{
         stage("Build"){
             environment {
-                mavenHome = tool "MAVEN"
+                mavenHome = tool "maven_home"
             } 
             steps{
                 sh "ls -a ${mavenHome}"
-                sh '${mavenHome}/mvn clean package'
+                sh '${mavenHome}/bin/mvn clean package'
                 
             }
 
