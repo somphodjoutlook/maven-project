@@ -7,7 +7,7 @@ pipeline{
                 mavenHome = tool "maven_home"
             } 
             steps{
-                sh "ls -a ${mavenHome}"
+                echo "${mavenHome}"
                 sh '${mavenHome}/bin/mvn clean package'
                 
             }
