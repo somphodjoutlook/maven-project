@@ -6,6 +6,7 @@ pipeline{
     stages{
         stage("Build"){
             steps{
+                cleanupWs()
                 sh 'mvn clean package'
             }
 
