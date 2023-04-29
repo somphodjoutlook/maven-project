@@ -1,9 +1,14 @@
 pipeline{
     agent any
+    
     stages{
         stage("Build"){
+            environment {
+                mavenHome = tool "MAVEN"
+            } 
             steps{
-                sh '/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/Maven/bin/mvn clean package'
+                sh "ls -a ${mavenHome}"
+                sh '${mavenHome}/mvn clean package'
                 
             }
 
